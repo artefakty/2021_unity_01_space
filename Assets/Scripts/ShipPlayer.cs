@@ -9,6 +9,11 @@ public class ShipPlayer : MonoBehaviour
     public float TurnRate = 180;
 
     public float MaxSpeed = 40;
+    public float HpMax = 100;
+    public float Regen = 10;
+    public float HpLeft => hpCurrent / HpMax;
+
+    private float hpCurrent;
 
     public Blaster FieldBlaster;
 
@@ -20,14 +25,31 @@ public class ShipPlayer : MonoBehaviour
     private float azimuth;
     private float speed;
 
+    public void DoDamage(float dmg)
+    {
+        hpCurrent -= dmg;
+
+        if(hpCurrent <= 0)
+        {
+            hpCurrent = 0;
+        }
+    }
+
     void Start()
     {
         azimuth = 0;
         speed = 0;
+        hpCurrent = HpMax;
     }
 
     void Update()
     {
+        hpCurrent += Regen * Time.deltaTime;
+        if(hpCurrent > HpMax)
+        {
+            hpCurrent = HpMax;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(FieldBlaster, FieldHardpointLeftWing.position, FieldHardpointLeftWing.rotation);

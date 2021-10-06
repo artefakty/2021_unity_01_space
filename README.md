@@ -12,6 +12,7 @@ When | Where | What
 :---: | :---: | :---:
 6:00PM - 7:30PM, April 6th, 2021|Faculty of Physics, University of Lodz (online, MS Teams)|First workshop of basic introduction to Unity
 6:00PM - 7:30PM, April 13th, 2021|Faculty of Physics, University of Lodz (online, MS Teams)|Second workshop of basic introduction to Unity
+6:00PM - 7:30PM, April 20th, 2021|Faculty of Physics, University of Lodz (online, MS Teams)|Second workshop of basic introduction to Unity
 
 # Contact information
 

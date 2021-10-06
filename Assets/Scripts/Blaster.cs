@@ -7,6 +7,7 @@ public class Blaster : MonoBehaviour
     public float Speed = 150;
 
     public float TimeToLive = 2;
+    public float Damage = 10;
 
     public enum Shooter
     {
@@ -52,6 +53,8 @@ public class Blaster : MonoBehaviour
 
             if (shipPlayer != null)
             {
+                shipPlayer.DoDamage(Damage);
+
                 Instantiate(HitEffect, this.transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }
