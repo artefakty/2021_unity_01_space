@@ -8,14 +8,23 @@ public class Blaster : MonoBehaviour
 
     public float TimeToLive = 2;
 
+    public enum Shooter
+    {
+        Player,
+        Opponent
+    }
+
+    public Shooter MyShooter;
+    public GameObject HitEffect;
+
     private float timeToLiveLeft;
 
-    void Start()
+    private void Start()
     {
         timeToLiveLeft = TimeToLive;
     }
 
-    void Update()
+    private void Update()
     {
         this.transform.position += this.transform.forward * Speed * Time.deltaTime;
 
@@ -23,5 +32,29 @@ public class Blaster : MonoBehaviour
 
         if(timeToLiveLeft < 0)
             Destroy(this.gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(MyShooter == Shooter.Player)
+        {
+            var shipEnemy = collision.gameObject.GetComponentInParent<ShipEnemy>();
+
+            if (shipEnemy != null)
+            {
+                Instantiate(HitEffect, this.transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
+            }
+        }
+        if (MyShooter == Shooter.Opponent)
+        {
+            var shipPlayer = collision.gameObject.GetComponentInParent<ShipPlayer>();
+
+            if (shipPlayer != null)
+            {
+                Instantiate(HitEffect, this.transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
+            }
+        }
     }
 }

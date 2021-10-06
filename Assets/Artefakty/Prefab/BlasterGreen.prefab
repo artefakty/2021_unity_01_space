@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 648867968558453487}
   - component: {fileID: 6913156605187038289}
+  - component: {fileID: 8381744991652784868}
+  - component: {fileID: 5868863598212760067}
   m_Layer: 0
   m_Name: BlasterGreen
   m_TagString: Untagged
@@ -47,6 +49,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 150
   TimeToLive: 2
+  MyShooter: 0
+  HitEffect: {fileID: 159918, guid: a0040bf7072bc2f4e82d887d50a9c5e2, type: 3}
+--- !u!136 &8381744991652784868
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648867968558453484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 6
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &5868863598212760067
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648867968558453484}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &6963267861028122227
 GameObject:
   m_ObjectHideFlags: 0
